@@ -768,7 +768,8 @@ public class ModelUtils {
                 return schema;
             } else if (ref.getEnum() != null && !ref.getEnum().isEmpty()) {
                 // top-level enum class
-                return schema;
+                return ref; // temporary fix of https://github.com/OpenAPITools/openapi-generator/issues/2645
+                // return schema;
             } else if (isFreeFormObject(ref)) {
                 return schema;
             } else if (isArraySchema(ref)) {
